@@ -1,12 +1,22 @@
-exports.profile = (id) => {
-  return { id, name: "Mr X", email: "x@abc.xyz" }
-}
+const e = require("express");
 
+const temp = [];
+temp.push({fullName: 'abc', email: 'abc@gmail.com', password : 'abcabc'})
+temp.push({fullName: 'abc1', email: 'abc1@gmail.com', password : 'abcabc1'})
+temp.push({fullName: 'abc2', email: 'abc2@gmail.com', password : 'abcabc2'})
+
+exports.profile = (id) => {
+  return temp;
+}
+exports.checkingEmail = (email)=>{
+  temp.forEach(element => {
+    if(element.email== email){
+        return true;
+    }
+  });
+  return false;
+}
 exports.register = (fullName, email, password) => {
-  // Verify that email does not exist
-  // ...
-  // Create user with bcrypt(password)
-  // ...
-  console.log(fullName);
-  return {fullName: fullName, email: email, password : password}
+  temp.push({fullName: fullName, email: email, password : password});
+  return {fullName: fullName, email: email, password : password};
 }

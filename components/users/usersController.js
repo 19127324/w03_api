@@ -6,12 +6,16 @@ module.exports.profile = (req, res) => {
 
 module.exports.register = (req, res) => {
   try {
-    const { fullName, email, password} = req.body;
-    // User input validation
-    // ...
+    const { fullName, email, password } = req.body;
+    if (usersService.checkingEmail(email)) {
+      res.status(400).json({ error: "This email is already exsisted" });
+    }
+    else {
+      const user = usersService.register(fullName, email, password)
+      res.json({ user, message: "Created account successfully" });
+    }
 
-    res.status(201).json(usersService.register(fullName, email, password))
   } catch (e) {
-    res.status(400).json({errorMessage: e.message ?? 'Unknown error'});
+    res.status(400).json({ errorMessage: e.message ?? 'Unknown error' });
   }
 };
