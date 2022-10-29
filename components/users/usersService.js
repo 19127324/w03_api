@@ -7,5 +7,5 @@ exports.register = (fullName, email, password) => {
   // ...
   // Create user with bcrypt(password)
   // ...
-  res.status(400).json({ message: "test" });
+  res.status.json({ message: "test" });
 }
