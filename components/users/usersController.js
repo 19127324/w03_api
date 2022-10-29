@@ -8,7 +8,7 @@ module.exports.register = async (req, res) => {
   try {
     const { fullName, email, password } = req.body;
     if (await usersService.checkingEmail(email)) {
-      res.status(400).json({ error: "This email is already exsisted" });
+      res.json({ error: "This email is already exsisted" });
     }
     else {
       const user = await usersService.register(fullName, email, password)
