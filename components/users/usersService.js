@@ -1,9 +1,9 @@
 const e = require("express");
 
 const temp = [];
-temp.push({fullName: 'abc', email: 'abc@gmail.com', password : 'abcabc'})
-temp.push({fullName: 'abc1', email: 'abc1@gmail.com', password : 'abcabc1'})
-temp.push({fullName: 'abc2', email: 'abc2@gmail.com', password : 'abcabc2'})
+temp.push({username: 'abc', email: 'abc@gmail.com', password : 'abcabc'})
+temp.push({username: 'abc1', email: 'abc1@gmail.com', password : 'abcabc1'})
+temp.push({username: 'abc2', email: 'abc2@gmail.com', password : 'abcabc2'})
 
 exports.profile = () => {
   return temp;
@@ -18,6 +18,6 @@ exports.checkingEmail = (email)=>{
   return result;
 }
 exports.register = (fullName, email, password) => {
-  temp.push({fullName: fullName, email: email, password : password});
-  return {fullName: fullName, email: email, password : password};
+  temp.push({username: fullName, email: email, password : password});
+  return {username: fullName, email: email, password : password};
 }
