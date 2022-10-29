@@ -1,5 +1,5 @@
 exports.profile = (id) => {
-  return {id, name: "Mr X", email: "x@abc.xyz"}
+  return { id, name: "Mr X", email: "x@abc.xyz" }
 }
 
 exports.register = (fullName, email, password) => {
@@ -7,5 +7,5 @@ exports.register = (fullName, email, password) => {
   // ...
   // Create user with bcrypt(password)
   // ...
-  return {id: 4, name: "Mr X", email: "x@abc.xyz"}
+  res.status(400).json({ message: "test" });
 }
