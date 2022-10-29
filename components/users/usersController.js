@@ -4,14 +4,14 @@ module.exports.profile = (req, res) => {
   res.json(usersService.profile(1));
 }
 
-module.exports.register = (req, res) => {
+module.exports.register = async (req, res) => {
   try {
     const { fullName, email, password } = req.body;
-    if (usersService.checkingEmail(email)) {
+    if (await usersService.checkingEmail(email)) {
       res.status(400).json({ error: "This email is already exsisted" });
     }
     else {
-      const user = usersService.register(fullName, email, password)
+      const user = await usersService.register(fullName, email, password)
       res.json({ user, message: "Created account successfully" });
     }
 
