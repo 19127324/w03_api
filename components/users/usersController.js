@@ -1,7 +1,7 @@
 const usersService = require('./usersService');
 
 module.exports.profile = (req, res) => {
-  res.json(usersService.profile(1));
+  res.json(usersService.profile());
 }
 
 module.exports.register = async (req, res) => {
