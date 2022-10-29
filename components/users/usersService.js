@@ -17,7 +17,7 @@ exports.checkingEmail = (email)=>{
   });
   return result;
 }
-exports.register = (fullName, email, password) => {
-  temp.push({username: fullName, email: email, password : password});
-  return {username: fullName, email: email, password : password};
+exports.register = (username, email, password) => {
+  temp.push({username: username, email: email, password : password});
+  return {username: username, email: email, password : password};
 }
