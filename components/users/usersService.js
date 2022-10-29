@@ -9,12 +9,13 @@ exports.profile = () => {
   return temp;
 }
 exports.checkingEmail = (email)=>{
+  var result = false;
   temp.forEach(element => {
     if(element.email.localeCompare(email) == 0){
-        return true;
+        result = true;
     }
   });
-  return false;
+  return result;
 }
 exports.register = (fullName, email, password) => {
   temp.push({fullName: fullName, email: email, password : password});
