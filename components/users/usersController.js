@@ -8,11 +8,11 @@ module.exports.register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
     if (await usersService.checkingEmail(email)) {
-      res.json({ error: "This email is already exsisted" });
+      res.json({ message: -1 });
     }
     else {
       const user = await usersService.register(username, email, password)
-      res.json({ user, message: "Created account successfully" });
+      res.json({ user, message: 1 });
     }
 
   } catch (e) {
