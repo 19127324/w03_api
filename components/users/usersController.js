@@ -24,10 +24,10 @@ module.exports.login = async (req, res) => {
   try {
     const { username, password } = req.body;
     if (await usersService.checkingLogin(username, password)) {
-      res.json({ message: "Login successfully" });
+      res.json({ message: 1 });
     }
     else {
-      res.json({message: "Incorrect username or password"});
+      res.json({message: 0});
     }
 
   } catch (e) {
