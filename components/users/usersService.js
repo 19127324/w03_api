@@ -17,7 +17,18 @@ exports.checkingEmail = (email)=>{
   });
   return result;
 }
+
 exports.register = (username, email, password) => {
   temp.push({username: username, email: email, password : password});
   return {username: username, email: email, password : password};
+}
+
+exports.checkingLogin = (username, password) => {
+  var result = false;
+  temp.forEach(element => {
+    if(element.username.localeCompare(username) == 0 && element.password.localeCompare(password)==0){
+        result = true;
+    }
+  });
+  return result;
 }
